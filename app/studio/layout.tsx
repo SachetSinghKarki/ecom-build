@@ -16,3 +16,53 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+// 'use client';
+
+// import { useUser } from '@clerk/nextjs';
+// import { useRouter } from 'next/navigation';
+// import { useEffect, useState } from 'react';
+
+
+// export default function StudioLayout({
+//   children,
+// }: {
+//   children: React.ReactNode;
+// }) {
+//   const { isLoaded, isSignedIn, user } = useUser();
+//   const router = useRouter();
+//   const [accessVerified, setAccessVerified] = useState(false);
+
+//   useEffect(() => {
+//     if (isLoaded) {
+//       // Double-check admin status even after middleware verification
+//       const isAdmin = user?.publicMetadata?.role === 'admin';
+      
+//       if (!isSignedIn) {
+//         router.push('/sign-in');
+//       } else if (!isAdmin) {
+//         router.push('/unauthorized');
+//       } else {
+//         setAccessVerified(true);
+//       }
+//     }
+//   }, [isLoaded, isSignedIn, user, router]);
+
+//   // Show loading state while verifying
+//   if (!isLoaded || !accessVerified) {
+//     return (
+//       <div className="flex items-center justify-center min-h-screen">
+//          <p>Loading...</p>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <html lang="en">
+//       <body className="studio-container">
+//         {children}
+//       </body>
+//     </html>
+//   );
+// }

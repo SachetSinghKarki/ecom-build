@@ -9,7 +9,7 @@ import { useEffect } from "react";
 function SuccessPage() {
   // This page is rendered when the user successfully completes a purchase
   const searchParams = useSearchParams();
-  const orderNumber = searchParams.get("orderNumber");
+  const orderNumber = searchParams?.get("orderNumber") ?? null; // Use optional chaining and fallback
   const clearBasket = useBasketStore((state) => state.clearBasket);
 
   useEffect(() => {

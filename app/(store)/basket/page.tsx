@@ -14,7 +14,7 @@ function BasketPage() {
   // This is the basket page component
   // You can use the basket store to manage items in the basket
   const groupedItems = useBasketStore((state) => state.getGroupedItems());
-  const totalPrice = useBasketStore((state) => state.getTotalPrice());
+
 
   const { isSignedIn } = useAuth();
   const { user } = useUser();
